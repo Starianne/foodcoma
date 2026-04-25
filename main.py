@@ -1,6 +1,8 @@
 import pygame
 import os
 
+from mixing import Mixing
+
 #buttons to be used in game
 class Button:
     def __init__(self, x, y, width, height, font, text='Button', screen=None):
@@ -145,7 +147,13 @@ class Game:
                     
                 
             else:
-                self.screen.fill("#ffffff")
+                mixing = Mixing(self.screen, self.clock)
+                mixing.run()
+
+                if mixing.completed:
+                    pass
+                else:
+                    self.game_started = False 
 
             pygame.display.flip()
             self.dt = self.clock.tick(60) / 1000
