@@ -11,6 +11,7 @@ class Flipping:
         self.completed = False
         self.screen_width = self.screen.get_width()
         self.screen_height = self.screen.get_height()
+        self.flip_height = 0
 
         self.flip_meter_surface1 = pygame.image.load('assets/imgs/FOODCOMA.png').convert_alpha()  
         self.flip_meter_rect1 = self.flip_meter_surface1.get_rect(center = (4*self.screen_width/5, self.screen_height/10))
