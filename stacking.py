@@ -1,5 +1,6 @@
 import pygame
 from random import randint, choice
+from finish import Finish
 
 TOPPINGS = ["syrup", "powdered_sugar", "nutella", "bananas", "strawberries"]
 
@@ -180,4 +181,5 @@ class Stacking:
             self.dt = self.clock.tick(60) / 1000  #was  missing /1000, was in ms not seconds
 
         if self.completed:
-            return self.completed
+            finish = Finish(self.screen, self.clock)
+            finish.run()
