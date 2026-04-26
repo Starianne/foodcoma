@@ -7,3 +7,10 @@ class Stacking:
         self.running = True
         self.completed = False
 
+#timer + combos
+    def run(self):
+        while self.running:
+            events = pygame.event.get()
+
+        if self.completed:
+            return self.completed
