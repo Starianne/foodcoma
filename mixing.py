@@ -13,10 +13,12 @@ class Mixing:
         self.input_sequence = []
 
         self.clockwise = ['up', 'right', 'down', 'left']
-        self.maxrotations = 5
+        self.maxrotations = 10
 
         self.font = pygame.font.Font('assets/font/MADETommySoftRegularPERSONALUSE.otf', 50)
         self.first_image = pygame.image.load('assets/imgs/nicheapple.jpg').convert_alpha()
+        self.second_image = pygame.image.load('assets/imgs/nicheblueberry.jpg').convert_alpha()
+        self.third_image = pygame.image.load('assets/imgs/nichestraw.jpg').convert_alpha()
 
     def check_rotation(self):
         last4 = self.input_sequence[-4:]
@@ -54,7 +56,12 @@ class Mixing:
 
             self.screen.fill("#da7676")
             text = "Make the Batter!!!"
-            self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
+            if self.rotations < 3: 
+                self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
+            elif self.rotations < 6:
+                self.screen.blit(self.second_image, (self.screen.get_width()//2 - self.second_image.get_width()//2, self.screen.get_height()//2 - self.second_image.get_height()//2))
+            else:
+                self.screen.blit(self.third_image, (self.screen.get_width()//2 - self.third_image.get_width()//2, self.screen.get_height()//2 - self.third_image.get_height()//2))
 
 
             pygame.display.flip()
