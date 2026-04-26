@@ -1,7 +1,7 @@
 import serial
 import keyboard
 
-ser = serial.Serial('COM6', 9600, timeout=0.1)
+ser = serial.Serial('COM3', 9600, timeout=0.1)
 
 button_map = {
     'B0': 'w',   

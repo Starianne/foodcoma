@@ -164,4 +164,4 @@ class Game:
 
 if __name__ == "__main__":
     app = Game()
-    asyncio.run(app.run()) 
+    asyncio.run(app.run())
