@@ -54,7 +54,7 @@ class Mixing:
             if self.rotations < 5: 
                 self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
                 self.screen.blit(self.spoon_image, (self.screen.get_width()//2 - self.spoon_image.get_width()//2, self.screen.get_height()//2 - self.spoon_image.get_height()//2))
-            elif self.rotations < 20:
+            elif self.rotations < 10:
                 self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
                 self.screen.blit(self.second_image, (self.screen.get_width()//2 - self.second_image.get_width()//2, self.screen.get_height()//2 - self.second_image.get_height()//2))
                 self.screen.blit(self.spoon_image, (self.screen.get_width()//2 - self.spoon_image.get_width()//2, self.screen.get_height()//2 - self.spoon_image.get_height()//2))
