@@ -26,7 +26,7 @@ class Flipping:
 
     def set_flip_height(self):
         self.flip_height = randint(1,4)
-        self.screen.blit(self.flip_meter[self.flip_height-1], self.flip_meter[self.flip_height*2])
+        self.screen.blit(self.flip_meter[self.flip_height-1], self.flip_meter[self.flip_height-1])
 
     def check_match(self, events):
         for event in events:
