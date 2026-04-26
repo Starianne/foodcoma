@@ -1,6 +1,5 @@
 import pygame
 from random import randint
-from stacking import Stacking
 
 class Flipping:
     def __init__(self, screen, clock):
@@ -102,8 +101,3 @@ class Flipping:
 
             pygame.display.flip()
             self.clock.tick(60)
-
-        if self.completed:
-            print("Go to stacking")
-            stacking = Stacking(self.screen, self.clock)
-            stacking.run()
