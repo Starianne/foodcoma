@@ -10,59 +10,41 @@ class Mixing:
         self.completed = False 
 
         self.rotations = 0
-        self.input_sequence = []
 
-        self.clockwise = ['up', 'right', 'down', 'left']
-        self.maxrotations = 10
+        self.maxrotations = 40
 
         self.font = pygame.font.Font('assets/font/MADETommySoftRegularPERSONALUSE.otf', 50)
         self.first_image = pygame.image.load('assets/imgs/first.png').convert_alpha()
         self.second_image = pygame.image.load('assets/imgs/second.png').convert_alpha()
         self.third_image = pygame.image.load('assets/imgs/third.png').convert_alpha()
 
-    def check_rotation(self):
-        last4 = self.input_sequence[-4:]
-
-        for i in range(4):
-            if last4 == self.clockwise[i:] + self.clockwise[:i]:
-                if self.rotations < self.maxrotations:
-                    self.rotations += 1
-                    print(f"Rotation {self.rotations} detected!")
-                    if self.rotations >= self.maxrotations:
-                        self.completed = True
-                        self.running = False 
-                self.input_sequence = []
-                return
                 
     def run(self):
         while self.running:
             events = pygame.event.get()
 
             for event in events: 
-                print(event)
+                if event.type == pygame.QUIT:
+                    self.running = False
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_UP:
-                        self.input_sequence.append('up')
+                        self.rotations += 1
                         print("Up key pressed")
                     elif event.key == pygame.K_RIGHT:
-                        self.input_sequence.append('right')
+                        self.rotations += 1
                         print("Right key pressed")
                     elif event.key == pygame.K_DOWN:
-                        self.input_sequence.append('down')
                         print("Down key pressed")
+                        self.rotations += 1
                     elif event.key == pygame.K_LEFT:
-                        self.input_sequence.append('left')
                         print("Left key pressed")
-            
-            if len(self.input_sequence) >= 4:
-                self.check_rotation()
-            
-
+                        self.rotations += 1
+   
             self.screen.fill("#DCD6F7")
             text = "Make the Batter!!!"
-            if self.rotations < 3: 
+            if self.rotations < 15: 
                 self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
-            elif self.rotations < 6:
+            elif self.rotations < 30:
                 self.screen.blit(self.second_image, (self.screen.get_width()//2 - self.second_image.get_width()//2, self.screen.get_height()//2 - self.second_image.get_height()//2))
             else:
                 self.screen.blit(self.third_image, (self.screen.get_width()//2 - self.third_image.get_width()//2, self.screen.get_height()//2 - self.third_image.get_height()//2))
