@@ -36,7 +36,6 @@ class Flipping:
         }
 
         self.set_flip_height()
-        text = "Flip the Pancake!"
 
     def set_flip_height(self):
         self.flip_height = randint(1, 4)
@@ -62,7 +61,6 @@ class Flipping:
                             self.set_flip_height()  # Next flip
 
             self.screen.fill("#DCD6F7")
-            text
             # Draw the current flip meter image
             idx = self.flip_height - 1
             self.screen.blit(self.flip_meter_surfaces[idx], self.flip_meter_rects[idx])

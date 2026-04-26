@@ -56,6 +56,7 @@ class Mixing:
             if self.rotations >= self.maxrotations:
                 self.completed = True
                 self.running = False
+                
 
             pygame.display.flip()
             self.clock.tick(60)
