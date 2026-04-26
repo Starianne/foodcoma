@@ -47,7 +47,7 @@ class Button:
 
 
     def draw(self, is_selected=False):
-        
+
         color = self.fill_colors['hover'] if is_selected else self.fill_colors['normal']
         self.surface.fill(color)
 
@@ -67,9 +67,9 @@ class Button:
 
     def select(self, events):
         for event in events:  
-            if event.type == pygame.KEYUP and event.key == pygame.K_DOWN:
+            if event.type == pygame.KEYUP and event.key == pygame.K_s:
                 self.button_select = (self.button_select + 1) % 2
-            elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_w:
                 self.button_select = (self.button_select - 1) % 2
         self.draw(self.titlebuttons[self.button_select], self.fill_colors['hover'])
         
@@ -145,7 +145,7 @@ class Game:
                     
                 
             else:
-                self.screen.fill("#ffffff")
+                pass #idk load classes iterate through finish as quick you can
 
             pygame.display.flip()
             self.dt = self.clock.tick(60) / 1000
