@@ -49,7 +49,10 @@ class Mixing:
             else:
                 self.screen.blit(self.third_image, (self.screen.get_width()//2 - self.third_image.get_width()//2, self.screen.get_height()//2 - self.third_image.get_height()//2))
 
-
+            if self.rotations >= self.maxrotations:
+                self.completed = True
+                self.running = False
+                
             pygame.display.flip()
             self.clock.tick(60)
         
