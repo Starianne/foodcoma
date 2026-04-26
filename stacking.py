@@ -20,12 +20,12 @@ class Stacking:
 
         # load topping images as surfaces (not just paths)
         self.topping_images = {
-            "pancake":       pygame.transform.scale_by(pygame.image.load('assets/imgs/Pancake_stackable .png').convert_alpha(), 0.3),
+            "pancake":       pygame.transform.scale_by(pygame.image.load('assets/imgs/pancake.png').convert_alpha(), 0.3),
             "syrup":         pygame.transform.scale_by(pygame.image.load('assets/imgs/syrup.jpg').convert_alpha(), 0.3),
             "powdered_sugar":pygame.transform.scale_by(pygame.image.load('assets/imgs/powdered_sugar.png').convert_alpha(), 0.3),
-            "nutella":       pygame.transform.scale_by(pygame.image.load('assets/imgs/second.png').convert_alpha(), 0.3),
-            "bananas":       pygame.transform.scale_by(pygame.image.load('assets/imgs/third.png').convert_alpha(), 0.3),
-            "strawberries":  pygame.transform.scale_by(pygame.image.load('assets/imgs/first.png').convert_alpha(), 0.3),
+            "nutella":       pygame.transform.scale_by(pygame.image.load('assets/imgs/nutella.png').convert_alpha(), 0.3),
+            "bananas":       pygame.transform.scale_by(pygame.image.load('assets/imgs/bananas.png').convert_alpha(), 0.3),
+            "strawberries":  pygame.transform.scale_by(pygame.image.load('assets/imgs/strawberries.png').convert_alpha(), 0.3),
         }
 
         # for making selection
@@ -36,7 +36,7 @@ class Stacking:
         self.time_limit = 30
         self.time_left = self.time_limit
 
-        self.stack = []  # ❌ was 0, needs to be a list
+        self.stack = [] 
 
         # basically lives
         self.mistakes = 0
@@ -178,7 +178,7 @@ class Stacking:
             self.draw_mistakes()
 
             pygame.display.flip()
-            self.dt = self.clock.tick(60) / 1000  #was  missing /1000, was in ms not seconds
+            self.dt = self.clock.tick(60) / 1000  
 
         if self.completed:
             finish = Finish(self.screen, self.clock)

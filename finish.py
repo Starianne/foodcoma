@@ -1,7 +1,5 @@
 import pygame
 
-from main import Game
-from mixing import Mixing
 
 class Finish:
     def __init__(self, screen, clock):
@@ -24,7 +22,8 @@ class Finish:
             for event in events:
                 if event.type == pygame.QUIT:
                     self.running = False
-                if event.type == pygame.K_SPACE:
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                    from mixing import Mixing  
                     mixing = Mixing(self.screen, self.clock)
                     mixing.run()
                     
@@ -43,4 +42,4 @@ class Finish:
             pygame.display.flip()
             self.clock.tick(60)
 
-        pygame.quit()
+        self.running = False
