@@ -1,5 +1,6 @@
 import pygame
 import os
+import asyncio
 
 from mixing import Mixing
 
@@ -116,7 +117,7 @@ class Game:
         self.running = False
         return self.running
 
-    def run(self):
+    async def run(self):
         while self.running:
             events = pygame.event.get()
 
@@ -154,13 +155,13 @@ class Game:
                 else:
                     self.game_started = False 
 
-            pygame.display.flip()
             self.dt = self.clock.tick(60) / 1000
 
+            pygame.display.flip()
+            await asyncio.sleep(0)
+        
         pygame.quit()
 
-def main():
-    game = Game()
-    game.run()
-
-main()
+if __name__ == "__main__":
+    app = Game()
+    asyncio.run(app.run()) 

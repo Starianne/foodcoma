@@ -21,7 +21,7 @@ class Stacking:
         # load topping images as surfaces (not just paths)
         self.topping_images = {
             "pancake":       pygame.transform.scale_by(pygame.image.load('assets/imgs/pancake.png').convert_alpha(), 0.3),
-            "syrup":         pygame.transform.scale_by(pygame.image.load('assets/imgs/syrup.jpg').convert_alpha(), 0.3),
+            "syrup":         pygame.transform.scale_by(pygame.image.load('assets/imgs/nutella.png').convert_alpha(), 0.3),
             "powdered_sugar":pygame.transform.scale_by(pygame.image.load('assets/imgs/powdered_sugar.png').convert_alpha(), 0.3),
             "nutella":       pygame.transform.scale_by(pygame.image.load('assets/imgs/nutella.png').convert_alpha(), 0.3),
             "bananas":       pygame.transform.scale_by(pygame.image.load('assets/imgs/bananas.png').convert_alpha(), 0.3),
@@ -100,14 +100,14 @@ class Stacking:
         base_y = padding
         base_x = 20
 
-        title = self.small_font.render('ORDER:', True, (80, 80, 80))
+        title = self.small_font.render('ORDER:', True, (105, 136, 224))
         self.screen.blit(title, (base_x, base_y))
         base_y += line_height
 
         for i, item in enumerate(self.order):
             # highlight already placed items
             if i < self.order_pos:
-                color = (150, 220, 150)  # greyed out / done
+                color = (105, 136, 224)  # done
             elif i == self.order_pos:
                 color = (230, 96, 110)   # current item to place
             else:
