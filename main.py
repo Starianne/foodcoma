@@ -127,7 +127,7 @@ class Game:
             if not self.game_started:
                 self.screen.fill("#DCD6F7")
                 self.screen.blit(self.title_surface, self.title_rect)
-
+                
 
                 for i, btn in enumerate(self.title_buttons):
                     btn.draw(is_selected=(i == self.button_select))
