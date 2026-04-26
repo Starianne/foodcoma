@@ -11,7 +11,7 @@ class Mixing:
 
         self.rotations = 0
 
-        self.maxrotations = 30
+        self.maxrotations = 15
 
         self.font = pygame.font.Font('assets/font/MADETommySoftRegularPERSONALUSE.otf', 50)
         self.first_image = pygame.image.load('assets/imgs/mixingbowl_empty.png').convert_alpha()
@@ -51,10 +51,10 @@ class Mixing:
             self.screen.fill("#DCD6F7")
             self.screen.blit(self.text_surface, (self.screen.get_width()//2 - self.text_surface.get_width()//2, self.screen.get_height()//4 - self.text_surface.get_height()//2))
 
-            if self.rotations < 10: 
+            if self.rotations < 5: 
                 self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
                 self.screen.blit(self.spoon_image, (self.screen.get_width()//2 - self.spoon_image.get_width()//2, self.screen.get_height()//2 - self.spoon_image.get_height()//2))
-            elif self.rotations < 20:
+            elif self.rotations < 12:
                 self.screen.blit(self.second_image, (self.screen.get_width()//2 - self.second_image.get_width()//2, self.screen.get_height()//2 - self.second_image.get_height()//2))
                 self.screen.blit(self.spoon_image, (self.screen.get_width()//2 - self.spoon_image.get_width()//2, self.screen.get_height()//2 - self.spoon_image.get_height()//2))
                 self.screen.blit(self.text_encouragement, (self.screen.get_width()//2 - self.text_encouragement.get_width()//2, self.screen.get_height()//1.5 - self.text_encouragement.get_height()//2))
