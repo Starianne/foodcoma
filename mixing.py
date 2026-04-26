@@ -1,5 +1,5 @@
 import pygame
-
+import flipping import Flipping 
 class Mixing:
     def __init__(self, screen, clock):
         self.screen = screen
@@ -35,14 +35,16 @@ class Mixing:
             events = pygame.event.get()
 
             for event in events: 
-                if event.type == pygame.K_UP:
-                    self.input_sequence.append('up')
-                elif event.type == pygame.K_RIGHT:
-                    self.input_sequence.append('right')
-                elif event.type == pygame.K_DOWN:
-                    self.input_sequence.append('down')
-                elif event.type == pygame.K_LEFT:
-                    self.input_sequence.append('left')
+                print(event)
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_UP:
+                        self.input_sequence.append('up')
+                    elif event.key == pygame.K_RIGHT:
+                        self.input_sequence.append('right')
+                    elif event.key == pygame.K_DOWN:
+                        self.input_sequence.append('down')
+                    elif event.key == pygame.K_LEFT:
+                        self.input_sequence.append('left')
             
             if len(self.input_sequence) >= 4:
                 self.check_rotation()
@@ -57,3 +59,6 @@ class Mixing:
             self.clock.tick(60)
         
         self.results = self.rotations
+        if self.completed:
+            flipping = Flipping(self.screen, self.clock)
+            flipping.run()
