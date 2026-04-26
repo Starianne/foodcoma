@@ -13,7 +13,7 @@ class Flipping:
 
         self.flip_height = 0
         self.flips_done = 0
-        self.total_flips = 15
+        self.total_flips = 20
         self.waiting_for_input = False
 
         self.text_font = pygame.font.Font('assets/font/MADETommySoftBoldPERSONALUSE.otf', size=60)

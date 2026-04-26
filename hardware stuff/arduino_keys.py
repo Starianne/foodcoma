@@ -20,7 +20,7 @@ direction_map = {
     'JL': '5',
     'JR': '6',
     'JU': '7',
-    'JD': '8',
+    'JD': '834',
 }
 
 last_zone = None
