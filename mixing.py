@@ -11,7 +11,7 @@ class Mixing:
 
         self.rotations = 0
 
-        self.maxrotations = 40
+        self.maxrotations = 30
 
         self.font = pygame.font.Font('assets/font/MADETommySoftRegularPERSONALUSE.otf', 50)
         self.first_image = pygame.image.load('assets/imgs/first.png').convert_alpha()
@@ -33,21 +33,25 @@ class Mixing:
                 if event.type == pygame.QUIT:
                     self.running = False
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_UP:
+                    if event.key == pygame.K_5:
+                        print("up")
                         self.rotations += 1
-                    elif event.key == pygame.K_RIGHT:
+                    elif event.key == pygame.K_6:
+                        print("right")
                         self.rotations += 1
-                    elif event.key == pygame.K_DOWN:
+                    elif event.key == pygame.K_7:
+                        print("down")
                         self.rotations += 1
-                    elif event.key == pygame.K_LEFT:
+                    elif event.key == pygame.K_8:
+                        print("left")
                         self.rotations += 1
    
             self.screen.fill("#DCD6F7")
             self.screen.blit(self.text_surface, (self.screen.get_width()//2 - self.text_surface.get_width()//2, self.screen.get_height()//4 - self.text_surface.get_height()//2))
 
-            if self.rotations < 15: 
+            if self.rotations < 10: 
                 self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
-            elif self.rotations < 30:
+            elif self.rotations < 20:
                 self.screen.blit(self.second_image, (self.screen.get_width()//2 - self.second_image.get_width()//2, self.screen.get_height()//2 - self.second_image.get_height()//2))
                 self.screen.blit(self.text_encouragement, (self.screen.get_width()//2 - self.text_encouragement.get_width()//2, self.screen.get_height()//1.5 - self.text_encouragement.get_height()//2))
             else:

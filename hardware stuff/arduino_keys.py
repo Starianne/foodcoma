@@ -17,10 +17,10 @@ distance_map = {
 }
 
 direction_map = {
-    'JL': 'left',
-    'JR': 'right',
-    'JU': 'up',
-    'JD': 'down',
+    'JL': '5',
+    'JR': '6',
+    'JU': '7',
+    'JD': '8',
 }
 
 last_zone = None
