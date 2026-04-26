@@ -25,7 +25,7 @@ class Stacking:
             "powdered_sugar":pygame.transform.scale_by(pygame.image.load('assets/imgs/powdered_sugar.png').convert_alpha(), 0.3),
             "nutella":       pygame.transform.scale_by(pygame.image.load('assets/imgs/nutella.png').convert_alpha(), 0.3),
             "bananas":       pygame.transform.scale_by(pygame.image.load('assets/imgs/bananas.png').convert_alpha(), 0.3),
-            "strawberries":  pygame.transform.scale_by(pygame.image.load('assets/imgs/strawberries.png').convert_alpha(), 0.3),
+            "strawberries":  pygame.transform.scale_by(pygame.image.load('assets/imgs/strawberries_icon.png').convert_alpha(), 0.3),
         }
 
         # for making selection
