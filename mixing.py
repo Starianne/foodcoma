@@ -43,12 +43,16 @@ class Mixing:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_UP:
                         self.input_sequence.append('up')
+                        print("Up key pressed")
                     elif event.key == pygame.K_RIGHT:
                         self.input_sequence.append('right')
+                        print("Right key pressed")
                     elif event.key == pygame.K_DOWN:
                         self.input_sequence.append('down')
+                        print("Down key pressed")
                     elif event.key == pygame.K_LEFT:
                         self.input_sequence.append('left')
+                        print("Left key pressed")
             
             if len(self.input_sequence) >= 4:
                 self.check_rotation()
