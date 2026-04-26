@@ -10,10 +10,11 @@ class Mixing:
         self.rotations = 0
         self.input_sequence = []
 
-        self.closewise = ['up', 'right', 'down', 'left']
-        self.maxrotations = 20
+        self.clockwise = ['up', 'right', 'down', 'left']
+        self.maxrotations = 5
 
         self.font = pygame.font.Font('assets/font/MADETommySoftRegularPERSONALUSE.otf', 50)
+        self.first_image = pygame.image.load('assets/imgs/nicheapple.jpg').convert_alpha()
 
     def check_rotation(self):
         last4 = self.input_sequence[-4:]
@@ -49,7 +50,7 @@ class Mixing:
 
             self.screen.fill("#da7676")
             text = "Make the Batter!!!"
-            font = pygame.font.Font('assets/font/MADETommySoftRegularPERSONALUSE.otf', 50)
+            self.screen.blit(self.first_image, (self.screen.get_width()//2 - self.first_image.get_width()//2, self.screen.get_height()//2 - self.first_image.get_height()//2))
 
 
             pygame.display.flip()
