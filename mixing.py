@@ -1,5 +1,7 @@
 import pygame
-import flipping import Flipping 
+
+from flipping import Flipping
+
 class Mixing:
     def __init__(self, screen, clock):
         self.screen = screen
